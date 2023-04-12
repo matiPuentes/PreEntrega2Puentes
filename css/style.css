@@ -1,0 +1,333 @@
+/* GENERAL */
+:root{
+     --bg-principal:  rgb(146, 143, 143);
+     --txt-dec: rgb(0, 0, 0);
+     --bg-prod: rgba(75, 67, 67, 0.849);
+     }
+a{  
+     text-decoration: none;color:var(--txt-dec);
+     font-size: 25px;
+     transition: 1s all;
+     padding: 10px;
+     font-family: 'Patua One', cursive;
+     }
+a:hover{
+     color: whitesmoke;
+     background-color: black;
+     font-size: 35px;
+     border-radius: 20px;
+     }
+h1{
+     font-size: 60px; 
+     font-family: 'Teko', sans-serif;
+     }     
+h2{
+     font-size: 45px; 
+     font-family: 'Teko', sans-serif;
+     }    
+ul{
+     list-style-type: none;
+     }
+p{
+     font-size: 20px;
+     font-family: 'Hind Madurai', sans-serif;
+     }    
+li{  
+     border: 1px solid black;
+     padding: 10px;
+     }     
+img{
+     border-radius: 20px;
+     }     
+Form{
+     background-color: var(--bg-prod);
+     color: whitesmoke;
+     padding: 15px;
+     font-size: 20px;
+     width: 300px;
+     border-radius: 4px;
+     }
+
+/* MOBILE */
+
+@media (max-width:768px){
+.GridBody{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: nowrap;
+     min-height: 100vh;}
+a{
+     font-size: 20px;
+     }
+h1{
+     font-size: 40px;
+     }
+/* BLOQUES */
+.Encabezado{
+     display: flex;
+     flex-direction: inherit;
+     align-items: baseline;
+     background-image: linear-gradient(rgb(148, 142, 142), whitesmoke, white);
+     border-radius: 20px;
+     position: sticky;
+     top: 0;
+     padding: auto;
+     }
+.Pie{
+     display: flex;
+     background-image: linear-gradient(white,rgb(148, 142, 142));
+     border-radius: 20px;
+     margin-top: auto;
+     }
+.MainIndex{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     }
+.MainProd, .MainContact, .MainRegis{
+     padding: 20px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     }
+/* ELEMENTOS */
+.MainIndex__Modelos1{
+     display: flex;
+     flex-direction: column;
+     margin-top: 10px;
+     margin-bottom: 20px;
+     }
+.MainIndex__Modelos2{
+     display: flex;
+     flex-direction: column;
+     margin-top: 10px;
+     margin-bottom: 20px;
+     }
+.MainIndex__Modelos3{
+     display: flex;
+     flex-direction: column;
+     margin-top: 10px;
+     margin-bottom: 20px;
+     }
+.MainProd__Nav--ul{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding: 50px;
+     }
+.MainProd__ProdsA, .MainProd__ProdsB, 
+.MainProd__ProdsC, .MainProd__ProdsD,
+.MainProd__ProdsE, .MainProd__ProdsF{
+     background-color:var(--bg-prod);
+     display: flex;
+     flex-direction: column;
+     width: 45%;
+     border-radius: 20px;
+     padding: 10px;
+     margin: 10px;}
+.MainProd__Boton{padding: 20px;}
+
+/* MODIFICADORES */
+.Encabezado__NavI--Flex{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     padding: 5px;
+     margin: 1px;
+     }
+.MainIndex__PortadaText--ImgFlex{
+     width: 100%;
+     height: auto;
+     }
+.MainIndex__Modelos1--p20{
+     margin-top: 25px;
+     }
+.MainNos__ImgTxt1--Img{
+     width: 100%;
+     height: auto;
+     }
+.MainNos__ImgTxt2--Img{
+     width: 100%;
+     height: auto;
+     }
+.MainProd__Img--Flex{width: 100%;
+height: auto;}
+}  
+
+/* DESKTOP */
+@media (min-width:1023px){
+.GridBody{
+     display: grid;
+     grid-template-areas: 
+     "header"
+     "main"
+     "footer";
+     grid-template-columns: 100%;
+     grid-template-rows: auto auto auto;
+     }
+header{grid-area: header;}
+main{grid-area: main;}
+footer{grid-area: footer;}  
+
+/* BLOQUES */
+.Encabezado {
+     display: flex;
+     flex-direction: row;
+     justify-content:space-between;
+     background-color: var(--bg-principal);
+     }    
+.MainIndex{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     }      
+.Pie{
+     display: flex;
+     justify-content: space-between;
+     background-color: var(--bg-principal);
+     }  
+
+.MainNos{
+     display: grid;
+     grid-template-areas:
+     "TitlNos TitlNos TitlNos TitlNos TitlNos TitlNos"
+     "ImgTxtNos1 ImgTxtNos1 ImgTxtNos1 ImgTxtNos2 ImgTxtNos2 ImgTxtNos2";
+     grid-template-columns: repeat(6, 1fr);
+     grid-template-rows: auto auto;
+     }
+.MainNos__Titl{grid-area: TitlNos;}
+.MainNos__ImgTxt1{grid-area: ImgTxtNos1;}
+.MainNos__ImgTxt2{grid-area: ImgTxtNos2;} 
+
+.MainProd{
+     align-items: center;
+     display: grid;
+     grid-template-areas:
+     "TitlProd TitlProd TitlProd TitlProd"
+     "NavProd ImgFlexProd ImgFlexProd ImgFlexProd" 
+     "NavProd ProdsA ProdsB ProdsC"
+     "NavProd ProdsD ProdsE ProdsF"
+     "Boton Boton Boton Boton"; 
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: repeat(4, auto);}
+ .MainProd__Titl{grid-area:TitlProd ;}
+ .MainProd__Nav{grid-area: NavProd;}
+ .MainProd__Img{grid-area: ImgFlexProd ;}
+ .MainProd__ProdsA{grid-area:ProdsA ;}
+ .MainProd__ProdsB{grid-area:ProdsB ;}
+ .MainProd__ProdsC{grid-area:ProdsC ;}
+ .MainProd__ProdsD{grid-area:ProdsD ;}
+ .MainProd__ProdsE{grid-area:ProdsE ;}
+ .MainProd__ProdsF{grid-area:ProdsF ;}
+ .MainProd__Boton{grid-area:Boton ;}
+ 
+.MainContact, .MainRegis{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-color: rgba(155, 155, 145, 0.74);
+     }
+
+
+    /* ELEMENTOS */
+.Encabezado__NavI {
+     display: flex;
+     flex-direction: row;
+     }
+.Encabezado__NavD {
+     display: flex;
+     align-items: center;
+     }   
+.MainIndex__PortadaText{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     } 
+.MainNos__Titl{
+     display: flex;
+     justify-content: center;
+     margin-bottom: 20px;
+     }   
+.MainNos__ImgTxt1{
+     display: flex;
+     flex-direction: column;
+     padding: 25px;
+     margin: 20px;
+     align-items: center;
+     }
+.MainNos__ImgTxt2{
+     display: flex;
+     flex-direction: column;
+     padding: 25px;
+     margin: 20px;
+     align-items: center;
+     }  
+.MainProd__Titl{
+     display: flex;
+     justify-content: center;
+     }
+.MainProd__Img{
+     margin-right: 60px;
+     }   
+.MainProd__Nav{
+     margin-right: 15px;
+     }   
+.MainProd__ProdsA, .MainProd__ProdsB, 
+.MainProd__ProdsC, .MainProd__ProdsD,
+.MainProd__ProdsE, .MainProd__ProdsF{
+     background-color:var(--bg-prod);
+     display: flex;
+     flex-direction: column;
+     width: 45%;
+     border-radius: 20px;
+     padding: 10px;
+     margin: 10px;}                                   
+.MainProd__Boton{margin: 20px;
+     display: flex;
+     justify-content: center;}   
+
+    /* MODIFICADORES */
+.Encabezado__NavI--Flex{
+     display: flex;
+     }    
+.MainIndex__PortadaText--ImgFlex{
+     width: 100%;
+     height: auto;
+     } 
+ .MainIndex__Modelos1--p20{
+     padding: 30px;
+     margin-left : 50px;
+     margin-right: 50px;
+     } 
+ .MainIndex__Modelos2--p20{
+     padding: 30px;
+     margin-left : 50px;
+     margin-right: 50px;
+     } 
+ .MainIndex__Modelos3--p20{
+     padding: 30px;
+     margin-left : 50px;
+     margin-right: 50px;
+     } 
+.MainNos__ImgTxt1--Img{
+     width: 70%;
+     height: auto;
+     }
+.MainNos__ImgTxt2--Img{
+     width: 70%;
+     height: auto;
+     }
+.MainProd__Nav--ul li{ 
+     border: none ;
+     }
+.MainContact__Form--Pad, .MainRegis__Form--pad{
+     width: 280px; 
+     padding: 10px;
+     }
+.MainContact__Form--boton, .MainRegis__Form--boton{ 
+     width: 300px;
+     padding: 15px;
+     }
+}
